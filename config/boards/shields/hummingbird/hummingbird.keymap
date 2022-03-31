@@ -1,0 +1,146 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+#define DEFAULT     0
+#define NUMSYM      1
+#define NAV         2
+
+#define screenshot LS(LG(S))
+
+&kscan0 {
+         debounce-period = <15>;
+         };
+
+/ {
+    behaviors {
+        am: alpha_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "alpha mods";
+            #binding-cells = <2>;
+            tapping_term_ms = <225>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_z {
+            timeout-ms = <35>;
+            key-positions = <0 10>;
+            bindings = <&kp Z>;
+        };
+        combo_b {
+            timeout-ms = <35>;
+            key-positions = <4 14>;
+            bindings = <&kp B>;
+        };
+
+        combo_n {
+            timeout-ms = <35>;
+            key-positions = <5 15>;
+            bindings = <&kp N>;
+        };
+        combo_sqt {
+            timeout-ms = <35>;
+            key-positions = <9 19>;
+            bindings = <&kp SQT>;
+        };
+        combo_bksp {
+            timeout-ms = <27>;
+            key-positions = <17 18>;
+            bindings = <&kp BKSP>;
+        };
+        combo_ent {
+            timeout-ms = <27>;
+            key-positions = <18 19>;
+            bindings = <&kp RET>;
+        };
+        combo_esc {
+            timeout-ms = <27>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+        combo_tab {
+            timeout-ms = <27>;
+            key-positions = <1 2>;
+            bindings = <&kp TAB>;
+        };
+        combo_del {
+            timeout-ms = <27>;
+            key-positions = <7 8>;
+            bindings = <&kp DELETE>;
+        };
+        combo_ask {
+            timeout-ms = <27>;
+            key-positions = <24 25>;
+            bindings = <&kp SLASH>;
+        };
+        combo_ae {
+            timeout-ms = <27>;
+            key-positions = <10 11>;
+            bindings = <&kp RA(Q) >;
+        };
+        combo_ue {
+            timeout-ms = <27>;
+            key-positions = <6 7>;
+            bindings = <&kp RA(Y) >;
+        };
+        combo_oe {
+            timeout-ms = <27>;
+            key-positions = <8 9>;
+            bindings = <&kp RA(P) >;
+        };
+        combo_ss {
+            timeout-ms = <27>;
+            key-positions = <11 12>;
+            bindings = <&kp RA(S) >;
+        };
+        combo_lbkt {
+            timeout-ms = <27>;
+            key-positions = <10 20>;
+            bindings = <&kp LBKT >;
+        };
+    };
+};
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+    &kp Q            &kp W         &kp E         &kp R         &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P
+    &am LGUI A       &am LALT S    &am LCTRL D   &am LSHFT F   &kp G            &kp H            &am RSHFT J      &am RCTRL K      &am RALT L       &am RGUI SEMI
+	                 &kp X         &kp C         &kp V                                           &kp M            &kp CMMA         &kp DOT         
+                                                 &mo NAV       &kp LSHFT        &lt NUMSYM SPACE &kp RALT
+            >;
+        };
+
+        numsym_layer {
+            label = "Numsym";
+            bindings = <
+    &kp N1           &kp N2        &kp N3        &kp N4        &kp N5           &kp N6           &kp N7           &kp N8           &kp N9           &kp N0   
+	&am LGUI EXCL    &am LALT AT   &am LCTRL HASH &am LSHFT DLLR &kp PERCENT    &kp GRAVE        &am RSHFT PLUS   &am RCTRL MINUS  &am RALT KP_ASTERISK &am RGUI SQT
+	                &am LSHFT LPAR &kp RPAR       &kp RBKT                      &kp SEMICOLON    &kp SQT          &am RSHFT EQUAL         
+                                                 &trans        &trans           &trans           &trans
+            >;
+        };
+
+        nav_layer {
+            label = "Nav";
+            bindings = <
+    &kp F1           &kp F2        &kp F3        &kp F4        &none            &none            &kp LC(LEFT)     &kp UP           &kp LC(RIGHT)    &kp screenshot   
+	&am LCTRL F5     &kp F6        &kp F7        &kp F8        &none            &kp F12          &kp LEFT         &kp DOWN         &kp RIGHT        &none
+	                 &am LSHFT F9  &kp F10       &kp F11       &none            &none            &kp C_PREV       &kp C_PP         &kp C_NEXT                
+                                                 &trans        &trans           &kp C_VOL_UP     &kp C_VOL_DN   
+            >;
+        };
+    };
+};
