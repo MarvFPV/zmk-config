@@ -72,7 +72,7 @@
             &kp TAB &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp LBKT  &kp RBKT                &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp KP_MINUS
             &kp CAPS &kp A &kp S &kp D &kp F &kp G &kp H &am RSHFT J &am RCTRL K &am RALT L &am RGUI SEMI &kp QUOT &kp ENTER              &kp NUM_4 &kp NUM_5 &kp NUM_6 &kp KP_PLUS
             &kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SLASH &kp RSFT &kp UP                 &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp ENTER 
-            &kp LCTRL &mo nav &kp SPACE &kp BSLH  &kp LEFT &kp RIGHT &kp DOWN                                              &kp NUM_0 &kp DOT
+            &kp LCTRL &mo nav &kp SPACE &kp BSLH  &kp LEFT &kp RIGHT &kp DOWN                                              &kp NUM_0 &am BLUETOOTH DOT
             >;
         };
         nav {
@@ -84,7 +84,7 @@
             &none   &trans &none  &none  &none  &none  &none                                                                &none     &none
             >;
         };
-/*        bluetooth {
+        bluetooth {
            bindings = <
             &bootloader   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none     &none         &none     &none     &none     &none
             &none   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none                   &none     &none     &none     &none
@@ -92,7 +92,6 @@
             &none   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none                   &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &reset
             &none   &none  &none  &none  &none  &none  &none                                                                &bt BT_CLR     &trans
             >;
-*/
         };
     };
 };
