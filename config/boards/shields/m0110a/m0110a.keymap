@@ -89,7 +89,7 @@
             &bootloader   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none     &none         &none     &none     &none     &none
             &none   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none                   &none     &none     &none     &none
             &none   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none                   &none     &none     &none     &none
-            &none   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none                   &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &reset
+            &none   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none                   &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &none
             &none   &none  &none  &none  &none  &none  &none                                                                &bt BT_CLR     &trans
             >;
         };
