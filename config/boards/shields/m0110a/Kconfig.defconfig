@@ -1,0 +1,9 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_M0110A
+
+config ZMK_KEYBOARD_NAME
+    default "m0110a"
+
+endif
